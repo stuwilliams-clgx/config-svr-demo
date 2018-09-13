@@ -1,0 +1,7 @@
+scope: global
+global-message: Hi there!
+global-value: 999
+global-date: 2018-09-13
+
+server:
+  port: 8080

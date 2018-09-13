@@ -1,0 +1,7 @@
+scope: demo
+demo-message: Demo it!
+demo-value: 888
+demo-date: 2018-09-14
+
+server:
+  port: 8088
