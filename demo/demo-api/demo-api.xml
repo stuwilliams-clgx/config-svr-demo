@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>demo-api</name>
+    </assembly>
+    <members>
+        <member name="T:demo_api.Controllers.ConfigController">
+            <summary>
+            Controller: Config
+            </summary>
+        </member>
+        <member name="M:demo_api.Controllers.ConfigController.#ctor(ConfigServerLibrary.IConfigServerClient)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="clientCS">IConfigServerClient</param>
+        </member>
+        <member name="M:demo_api.Controllers.ConfigController.GetGlobal">
+            <summary>
+            Global Settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:demo_api.Controllers.ConfigController.GetApp(System.String)">
+            <summary>
+            App Specific Settings
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="M:demo_api.Controllers.ConfigController.GetAppEnv(System.String,System.String)">
+            <summary>
+            App Environment Specific Settings
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <returns></returns>
+        </member>
+        <member name="M:demo_api.Controllers.ConfigController.GetAll">
+            <summary>
+            Get all settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:demo_api.Controllers.HomeController">
+            <summary>
+            Controller: Home
+            </summary>
+        </member>
+        <member name="M:demo_api.Controllers.HomeController.Index">
+            <summary>
+            Index => Swagger
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:demo_api.Helpers.ExceptionMiddlewareExtensions">
+            <summary>
+            Extension: Exception Middleware
+            </summary>
+        </member>
+        <member name="M:demo_api.Helpers.ExceptionMiddlewareExtensions.ConfigureExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Logging.ILogger{System.String})">
+            <summary>
+            Configure Exception Handler Middleware Method
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:demo_api.Helpers.TypeSwitch">
+            <summary>
+            Provides for switching on type (handy for error handling)
+            <para>From: http://stackoverflow.com/questions/11277036/typeswitching-in-c-sharp</para>
+            
+            </summary>
+        </member>
+        <member name="T:demo_api.Helpers.TypeSwitch.CaseInfo">
+            <summary>
+            Case Info
+            </summary>
+        </member>
+        <member name="P:demo_api.Helpers.TypeSwitch.CaseInfo.IsDefault">
+            <summary>
+            Is Default Case
+            </summary>
+        </member>
+        <member name="P:demo_api.Helpers.TypeSwitch.CaseInfo.Target">
+            <summary>
+            Type to switch on
+            </summary>
+        </member>
+        <member name="P:demo_api.Helpers.TypeSwitch.CaseInfo.Action">
+            <summary>
+            Thing to do if this case selected
+            </summary>
+        </member>
+        <member name="M:demo_api.Helpers.TypeSwitch.Do(System.Object,demo_api.Helpers.TypeSwitch.CaseInfo[])">
+            <summary>
+            Do the action
+            </summary>
+            <param name="source">Source of the action</param>
+            <param name="cases">Cases</param>
+        </member>
+        <member name="M:demo_api.Helpers.TypeSwitch.Case``1(System.Action)">
+            <summary>
+            Case Block
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="action">Action</param>
+            <returns>Case Information</returns>
+        </member>
+        <member name="M:demo_api.Helpers.TypeSwitch.Case``1(System.Action{``0})">
+            <summary>
+            Case Block (Generic)
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="action">Action</param>
+            <returns>Case Information</returns>
+        </member>
+        <member name="M:demo_api.Helpers.TypeSwitch.Default(System.Action)">
+            <summary>
+            Default Case Block
+            </summary>
+            <param name="action">Action</param>
+            <returns>Case Information</returns>
+        </member>
+        <member name="T:demo_api.Helpers.ValidationException">
+            <summary>
+            Validation Exception
+            </summary>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.#ctor">
+            <summary>
+            CTOR
+            </summary>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.#ctor(System.String)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.#ctor(System.String,System.Exception)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="message">Message</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.#ctor(System.String,System.String,System.Collections.Generic.IList{System.String})">
+            <summary>
+            CTOR
+            </summary>
+            <param name="message">Message</param>
+            <param name="resourceName"></param>
+            <param name="validationErrors"></param>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.#ctor(System.String,System.String,System.Collections.Generic.IList{System.String},System.Exception)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="message">Message</param>
+            <param name="resourceName">The name of the thing being validated</param>
+            <param name="validationErrors">List of validation errors</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            De-Serializer CTOR
+            </summary>
+            <param name="info">SerializationInfo</param>
+            <param name="context">StreamingContext</param>
+        </member>
+        <member name="P:demo_api.Helpers.ValidationException.ResourceName">
+            <summary>
+            The name of the thing being validated
+            </summary>
+        </member>
+        <member name="P:demo_api.Helpers.ValidationException.ValidationErrors">
+            <summary>
+            List of validation errors
+            </summary>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Serializer
+            </summary>
+            <param name="info">SerializationInfo</param>
+            <param name="context">StreamingContext</param>
+        </member>
+        <member name="M:demo_api.Helpers.ValidationException.ValidationText(System.String)">
+            <summary>
+            Nicely formatted validation list
+            </summary>
+            <param name="separator">Separator</param>
+            <returns>List as a string</returns>
+        </member>
+        <member name="T:demo_api.Models.ErrorDetails">
+            <summary>
+            Error Details
+            </summary>
+        </member>
+        <member name="P:demo_api.Models.ErrorDetails.StatusCode">
+            <summary>
+            Status Code
+            </summary>
+        </member>
+        <member name="P:demo_api.Models.ErrorDetails.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="M:demo_api.Models.ErrorDetails.ToString">
+            <summary>
+            Debug To String
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:demo_api.Program">
+            <summary>
+            Entry Point
+            </summary>
+        </member>
+        <member name="M:demo_api.Program.Main(System.String[])">
+            <summary>
+            Entry Point
+            </summary>
+            <param name="args">args</param>
+        </member>
+        <member name="M:demo_api.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Create Web Host Builder
+            </summary>
+            <param name="args">args</param>
+            <returns>IWebHostBuilder</returns>
+        </member>
+        <member name="T:demo_api.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:demo_api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="configuration">IConfiguration</param>
+        </member>
+        <member name="P:demo_api.Startup.Configuration">
+            <summary>
+            IConfiguration
+            </summary>
+        </member>
+        <member name="M:demo_api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:demo_api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILogger{System.String})">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+            <param name="env">IHostingEnvironment</param>
+            <param name="logger">ILogger</param>
+        </member>
+    </members>
+</doc>
